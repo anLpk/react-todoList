@@ -1,10 +1,24 @@
-body {
-  font-family: Helvetica;
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: auto;
+  width: 50%;
+  padding: 30px;
+  border: 1px solid #efefef;
 }
 
-#root {
-  height: 100vh;
+.todo-item {
+  padding: 30px 20px 0;
+  width: 70%;
   display: flex;
+  justify-content: flex-start;
+  font-size: 16px;
+  font-weight: 200;
   align-items: center;
-  justify-content: center;
+  border-bottom: 1px dashed darkcyan;
+  :last-child {
+    margin-left: 10px;
+  }
 }
