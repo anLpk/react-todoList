@@ -4,20 +4,24 @@ import todosData from "./todosData";
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      todos = todosData
-    }
+      todos: todosData,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(id) {
+    console.log("changed", id);
   }
 
   render() {
     const todoItems = this.state.todos.map((item) => (
-      <TodoItem key={item.id} item={item} />
+      <TodoItem key={item.id} item={item} handleChange={this.handleChange} />
     ));
-  
+
     return <div className="todo-list">{todoItems}</div>;
   }
 }
-
 
 export default App;
